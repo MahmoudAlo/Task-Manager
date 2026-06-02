@@ -10,13 +10,13 @@ use function Pest\Laravel\json;
 
 class CheckUsersRole
 {
-   
+
     public function handle(Request $request, Closure $next): Response
     {
-       if (Auth::user()->role === 'admin')
-        return $next($request);
-        
-        return response()->json(['masseg'=>'access dinay'],403);
+        if (Auth::user()->role === 'admin')
+            return $next($request);
+
+        return response()->json(['masseg' => 'access dinay'], 403);
 
     }
 }

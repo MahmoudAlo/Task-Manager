@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorTaskRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
 
     public function authorize(): bool
@@ -15,10 +15,8 @@ class StorTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'=>'required|string|between:2,50',
-            'describion'=>'nullable|string',
-            'priority'=>'required|in:high,medium,low',
-          
+            'email' => 'required|string|email',
+            'password' => 'required|string'
         ];
     }
 }
